@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt. IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Miami Splice</title>
+        <link href='http://fonts.googleapis.com/css?family=Nova+Round' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="styles/MIAMI_screen.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+    </head>
+    <body>
+
+
+
+	<div id="nav-one" class="nav">
+		
+		   	<audio id="beep-one">
+				<source src="wouldnt_say.mp3" controls></source>
+				<source src="wouldnt_say.ogg" controls></source>
+				Your browser isn't invited for super fun time.
+			</audio>
+		
+		   	
+<a href="#" id="miami_1"><img src="images/Miami_1.png" onmouseover="this.src='images/Miami_1.gif'" onmouseout="this.src='images/Miami_1.png'"/></a>
+</div>
+
+
+
+  
+
+
+
+		<script>$("#nav-one a")
+  .each(function(i) {
+    if (i != 0) { 
+      $("#beep-one")
+        .clone()
+        .attr("id", "beep-one" + i)
+        .appendTo($(this).parent()); 
+    }
+    $(this).data("beeper", i);
+  })
+  .mouseenter(function() {
+    $("#beep-one" + $(this).data("beeper"))[0].play();
+  });
+$("#beep-one").attr("id", "beep-one0");</script>
+
+
+		
+	
+    </body>
+</html>

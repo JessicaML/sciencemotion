@@ -1,9 +1,4 @@
 jQuery(document).ready(function($){
-
-
-
-
-
 	$(window).scroll(function(){
 		currentoffset = $(this).scrollTop();
 		if (currentoffset<601) {
@@ -46,7 +41,7 @@ jQuery(document).ready(function($){
 	});
 
 
-              $('#top').hover(function() {
+        $('#top').hover(function() {
         $('#conjunctiva_label').fadeTo("fast",0.99);
         $('#cornea_label').fadeTo("slow",0.99);
         $('#lens_label').fadeTo("slow",0.99);

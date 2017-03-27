@@ -5,13 +5,12 @@ html
   head
     link(href='http://fonts.googleapis.com/css?family=Nova+Round', rel='stylesheet', type='text/css')
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous")
-    link(rel='stylesheet', href='/style.css')
-    link(rel='stylesheet', href='/diffusion/screen.css')
+    link(rel='stylesheet', href='/diffusion/styles/screen.css')
       
   |   
   body
     section#top
-      h1 Diffusion
+      h1 Diffusion fdsFAFawqw
       |   
       h2
         span#btn-liquid(style='color:#ff4e40') Liquid
@@ -114,8 +113,27 @@ html
     | &#x9;&#x9;
     section#about
       div
-        h1 More info
-    |     
+        h1 More info vgjkhljmlk
+    
+    section#comments
+      .card.card-block
+            h5 Comments
+            hr
+            each comment in comments
+              .card.card-block
+                .col-xs-12.col-md-8
+                  p= comment.content
+                  p= comment.id
+                  p= comment.PostId
+
+      .card.card-block
+        h5 Add a comment:
+        form(action="/posts/" + post.id + "/comments", method='POST')
+          input(type='hidden' name='PostId' value="post.id" .form-group)
+          textarea.form-control(rows='5', name='content' value=post.id .form-group)
+          button.btn.btn-success(type='submit') Add comment
+    
+         
     script.
       $(document).ready(function(){
       $("#btn-liquid").click(function(){

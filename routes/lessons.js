@@ -40,10 +40,16 @@ router.get('/lessons', (req, res) => {
 // });
 
 router.get('/diffusion', (req, res) => {
-  db.Post.findAll({ order: [['createdAt', 'DESC']] }).then((blogPosts) => {
-    res.render('lessons/diffusion', { blogPosts: blogPosts, user: req.session.user });
+  db.Post.findOne({
+    where: {
+      // slug: req.params.slug
+    }
+  }).then((post) => {
+    return post.getComments().then((comments) => {
+      res.render('lessons/diffusion', { post: post, comments: comments });
+    });
   }).catch((error) => {
-    throw error;
+    res.status(404).end();
   });
 });
 
@@ -74,18 +80,6 @@ router.get('/eye', (req, res) => {
     });
   }).catch((error) => {
     res.status(404).end();
-  });
-});
-
-router.post('/posts/:id/comments', (req, res) => {
-  db.Post.findById(req.params.id).then((post) => {
-    console.log(post.UserId);
-    var comment = req.body;
-    comment.PostId = post.id;
-
-    db.Comment.create(comment).then(() => {
-      res.redirect('/eye');
-        });
   });
 });
 

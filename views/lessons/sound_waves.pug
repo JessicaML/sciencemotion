@@ -50,6 +50,25 @@ html
     section#about
       div
         h1 More info
+        
+    section#comments
+      .card.card-block
+            h5 Comments
+            hr
+            each comment in comments
+              .card.card-block
+                .col-xs-12.col-md-8
+                  p= comment.content
+                  p= comment.id
+                  p= comment.PostId
+
+      .card.card-block
+        h5 Add a comment:
+        form(action="/posts/" + post.id + "/comments", method='POST')
+          input(type='hidden' name='PostId' value="post.id" .form-group)
+          textarea.form-control(rows='5', name='content' value=post.id .form-group)
+          button.btn.btn-success(type='submit') Add comment
+        
     // End Site Content
     script.
       $("#nav-one a")

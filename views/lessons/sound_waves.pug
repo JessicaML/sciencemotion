@@ -1,0 +1,72 @@
+doctype html
+html
+  title Sound waves
+  |   
+  head
+    meta(charset='utf-8')
+    |         
+    link(rel='stylesheet', href='styles/screen.css')
+    |                
+    meta(charset='utf-8')
+    |         
+    link(href='http://fonts.googleapis.com/css?family=Nova+Round', rel='stylesheet', type='text/css')
+    |         
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js')
+  |   
+  body
+    section#top
+      h1 Sound waves
+      //
+        slower diffusion
+      #nav-one.nav
+        audio#beep-one
+          source(src='wouldnt_say.mp3', controls='')
+          |         
+          source(src='wouldnt_say.ogg', controls='')
+          |         Your browser isn&apos;t invited for super fun time.
+        |         
+        a#miami_1(href='#')
+          img(src='images/Miami_1.png', onmouseover="this.src='images/Miami_1.gif'", onmouseout="this.src='images/Miami_1.png'")
+    | &#x9;&#x9;
+    section#info
+      div
+        h1
+          | Properties of sound waves
+        p
+          | Sound waves are 
+          span(style='color:#cc8d9c;') longitudinal
+          |  waves which means they vibrate in the same direction as the direction of travel. They are produced by vibrating sources, such as speakers. Sound waves can only travel through a solid, liquid or gas medium. They travel fastest in solids, then liquids and slowest in gases. A good model for sound waves is a spring.
+        p
+          | The sections of the sound waves where the particles are pushed together are areas of 
+          span(style='color:#149fff;') compression
+          | . The sections of the sound waves where the particles are further apart are areas of 
+          span(style='color:#149fff;') rarefaction
+          | .
+        p
+          | Sound waves can be 
+          span(style='color:#00ffb5;') reflected
+          |  to form an echo, 
+          span(style='color:#00ffb5;') refracted
+          |  and 
+          span(style='color:#00ffb5;') diffracted
+          | .
+    | &#x9;&#x9;
+    section#about
+      div
+        h1 More info
+    // End Site Content
+    script.
+      $("#nav-one a")
+      .each(function(i) {
+      if (i != 0) {
+      $("#beep-one")
+      .clone()
+      .attr("id", "beep-one" + i)
+      .appendTo($(this).parent());
+      }
+      $(this).data("beeper", i);
+      })
+      .mouseenter(function() {
+      $("#beep-one" + $(this).data("beeper"))[0].play();
+      });
+      $("#beep-one").attr("id", "beep-one0");

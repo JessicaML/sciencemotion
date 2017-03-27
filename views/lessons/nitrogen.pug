@@ -1,0 +1,43 @@
+doctype html
+// [if gt IE 8] <!
+html.no-js
+  // <![endif]
+  head
+    meta(charset='utf-8')
+    title Eye
+    link(href='http://fonts.googleapis.com/css?family=Nova+Round', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='styles/screen.css')
+    script(src='scripts/lib/modernizr-2.6.2.min.js')
+  body
+    //if lt IE 7
+    section#top
+      h1 The eye
+      #pupil2
+        img#pupil_label(src='styles/eye/pupil_label.png')
+      #cornea
+        img#cornea_label(src='styles/eye/cornea_label.png')
+      #fovea
+        img#fovea_label(src='styles/eye/fovea_label.png')
+      #cillary_muscle
+        img#cillary_muscle_label(src='styles/eye/cillary_muscle_label.png')
+      #lens
+        img#lens_label(src='styles/eye/lens_label.png')
+      #conjunctiva
+        img#conjunctiva_label(src='styles/eye/conjunctiva_label.png')
+    section#info
+      div
+        h1 The eye is a sense organ that responds to light
+        h2(style='color:#ff4e40;') Cornea
+        p 	Refracts light - bends it as it enters the eye 
+        h2(style='color:#149dcc;') Iris
+        p  Controls how much light enters the pupil 
+        h2(style='color:#00ffb5;')  Lens
+        p  Focuses light onto the retina 
+    section#about
+      div
+        h1 More info
+    // End Site Content
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+    script.
+      window.jQuery || document.write('<script src="scripts/lib/jquery-1.9.1.min.js"><\\/script>')
+    script(src='scripts/oakley.js')

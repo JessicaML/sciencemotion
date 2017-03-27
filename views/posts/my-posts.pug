@@ -1,0 +1,35 @@
+extends ../application.pug
+
+block content
+  .container.col-md-4.float-xs-right
+      h3 About this blog
+      ul.nav.nav-tabs.nav-stacked
+        li
+          a(href='#') Contact us
+        li
+          a(href='#') More info
+        li
+          a(href='#') Another Link
+
+
+
+  .container.col-md-8
+    .row
+      .col-xs-8.offset-xs-2
+
+        h1 All posts from this blog
+        hr
+        each thisUserPost in thisUserPosts
+          .card.card-block
+            .col-xs-12.col-md-8
+            .col-md-8
+              a(href="/" + thisUserPost.slug)
+                h2= thisUserPost.title
+                h2= thisUserPost.UserId
+                p= thisUserPost.content
+                .col-xs-6.text-xs-right
+                  a.btn.btn-warning(href='/admin/posts/' + thisUserPost.id +'/edit') Edit Post
+                .col-xs-6.text-xs-right
+                  form(action='/admin/posts/' + thisUserPost.id, method='POST')
+                    input(type='hidden', name='_method', value='DELETE')
+                    button.btn.btn-danger(type='submit') Remove Post

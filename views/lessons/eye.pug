@@ -48,7 +48,9 @@ html.no-js
               .card.card-block
                 .col-xs-12.col-md-8
                   p= comment.content
-    
+                  p= comment.id
+                  p= comment.PostId
+
       .card.card-block
         h5 Add a comment:
         form(action="/posts/" + post.id + "/comments", method='POST')

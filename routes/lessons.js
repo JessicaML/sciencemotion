@@ -53,6 +53,20 @@ router.get('/diffusion', (req, res) => {
   });
 });
 
+router.get('/example', (req, res) => {
+  db.Post.findOne({
+    where: {
+      // slug: req.params.slug
+    }
+  }).then((post) => {
+    return post.getComments().then((comments) => {
+      res.render('lessons/example', { post: post, comments: comments });
+    });
+  }).catch((error) => {
+    res.status(404).end();
+  });
+});
+
 router.get('/sound_waves', (req, res) => {
   db.Post.findAll({ order: [['createdAt', 'DESC']] }).then((blogPosts) => {
     res.render('lessons/sound_waves', { blogPosts: blogPosts, user: req.session.user });

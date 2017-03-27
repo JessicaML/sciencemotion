@@ -1,0 +1,43 @@
+html
+  head
+    title Science Motion
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous")
+    link(rel="stylesheet" href="" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous")
+    link(rel='stylesheet', href='/css/skel.css')
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/style-wide.css')
+    link(rel='stylesheet', href='/css/style-normal.css')
+    meta(http-equiv='content-type', content='text/html; charset=utf-8')
+    meta(name='description', content='')
+    meta(name='keywords', content='')
+    script(src='/public/js/jquery.min.js')
+    script(src='/public/js/jquery.poptrox.min.js')
+    script(src='/public/js/jquery.scrolly.min.js')
+    script(src='/public/js/jquery.scrollex.min.js')
+    script(src='/public/js/skel.min.js')
+    script(src='/public/js/init.js')
+
+  body
+    nav(class="navbar navbar-light bg-faded")
+      a(class="navbar-brand btn btn-default" href="/") Home
+      if user
+        a(href="/logout" style="margin-left:5px" class="btn btn-primary float-xs-right") Logout
+        a(href="/admin/posts/new" style="margin-left:5px" class="btn btn-info float-xs-right") Create new post
+        a(href="/admin/posts" style="margin-left:5px" class="btn btn-success float-xs-right") Admin panel
+        a(href="/admin/my-posts" style="margin-left:5px" class="btn btn-warning float-xs-right") My posts
+        p(class="navbar-brand") Welcome back, #{user.name}!
+
+      else
+        a(href="/register" style="margin-left:5px" class="btn btn-primary float-xs-right") Register an account
+        a(href="/login" style="margin-left:5px" class="btn btn-success float-xs-right") Login
+        a(href="/lessons" style="margin-left:5px" class="btn btn-warning float-xs-right") View lessons
+
+
+    block content
+    script(src='/js/jquery.min.js')
+    script(src='/js/jquery.poptrox.min.js')
+    script(src='/js/jquery.scrolly.min.js')
+    script(src='/js/jquery.scrollex.min.js')
+    script(src='/js/skel.min.js')
+    script(src='/js/init.js')
+    script(src='/js/custom-jquery.js')

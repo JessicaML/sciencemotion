@@ -1,0 +1,30 @@
+extends ../application.pug
+
+block content
+
+  .container
+    .row
+      .col-xs-8.offset-xs-2
+
+        if errors
+          each error in errors
+            .alert.alert-danger(role='alert')
+              strong=error.message
+
+        h1 Create a New post
+
+        hr
+        form(action="/admin/posts" method="POST")
+          div(class="form-group")
+            label(for="post-title") Title
+            input(name="title" type="text" class="form-control" id="title")
+          div(class="form-group")
+            label(for="post-cover-image") slug
+            input(name="slug" type="text" class="form-control" id="slug")
+          div(class="form-group")
+            label(for="post-description") content
+            textarea(name="content" class="form-control" rows=5 id="content")
+          div(class="form-group")
+            input(type="hidden" name="UserId" value=user.id class="form-control")
+          div(class="form-group text-xs-right")
+            button(type="submit" class="btn btn-lg btn-success") Create a post

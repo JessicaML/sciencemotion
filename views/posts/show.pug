@@ -1,0 +1,25 @@
+extends ../application.pug
+
+block content
+  .container
+    .card.card-block
+      .row
+        .col-xs-12.col-md-8
+          h1= post.title
+          p= post.content
+          .row
+
+    .card.card-block
+      h5 Comments
+      hr
+      each comment in comments
+        .card.card-block
+          .col-xs-12.col-md-8
+            p= comment.content
+
+      .card.card-block
+        h5 Add a comment:
+        form(action="/posts/" + post.id + "/comments", method='POST')
+          input(type='hidden' name='PostId' value="post.id" .form-group)
+          textarea.form-control(rows='5', name='content' value=post.id .form-group)
+          button.btn.btn-success(type='submit') Add comment

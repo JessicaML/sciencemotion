@@ -1,12 +1,12 @@
 # ScienceMotion
 
-*This is an application to learn the concepts of high-school level Science through animation*
+*This is an application to learn the concepts of high-school level science through animation*
 
 ## To run the application
 
 Enter the following commands in the terminal:
 
- - $ git clone git@github.com:JessicaML/ScienceMotion.git
+ - $ git clone git@github.com:JessicaML/sciencemotion.git
  - $ cd ScienceMotion
  - $ npm install
  - $ node index.js

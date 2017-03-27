@@ -20,17 +20,31 @@ block content
           .container.col-md-8
             .row
               .col-xs-8.offset-xs-2
-                h1 All posts from this blog
-                hr
-                each blogPost in blogPosts
-                  .card.card-block
-                    .col-xs-12.col-md-8
-                    .col-md-8
-                      a(href="/" + blogPost.slug)
-                        h2= blogPost.title
-                        h2= blogPost.UserId
-        
-                      p= blogPost.content
+                .col-md-8
+                  a(href="/eye")
+                    p eye
+                  a(href="/diffusion")
+                    p diffusion
+                  a(href="/sound_waves")
+                    p sound waves
+                        
+      section#blog.main.style3.primary
+        .content.container
+          header
+            .container.col-md-8
+              .row
+                .col-xs-8.offset-xs-2
+                  h1 Blog posts
+                  hr
+                  each blogPost in blogPosts
+                    .card.card-block
+                      .col-xs-12.col-md-8
+                      .col-md-8
+                        a(href="/" + blogPost.slug)
+                          p= blogPost.title
+                          p= blogPost.UserId
+                          p= blogPost.content
+                    
 
     footer#footer
       ul.actions

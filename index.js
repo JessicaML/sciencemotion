@@ -14,6 +14,7 @@ var app = express();
 
 const adminRouter = require('./routes/admin'),
       authenticationRouter = require('./routes/authentication'),
+      lessonRouter = require('./routes/lessons'),
       changePasswordRouter = require('./routes/change-password');
 
 app.set('view engine', 'pug');
@@ -45,6 +46,7 @@ app.use(methodOverride(function (req, res) {
 
 app.use('/admin', adminRouter);
 app.use('/', authenticationRouter);
+app.use('/', lessonRouter);
 app.use('/', changePasswordRouter);
 
 // comment posted to db

@@ -39,6 +39,14 @@ html.no-js
     section#about
       div
         h1 More info
+        
+    .card.card-block
+      h5 Add a comment:
+      form(action="/posts/" + post.id + "/comments", method='POST')
+        input(type='hidden' name='PostId' value="post.id" .form-group)
+        textarea.form-control(rows='5', name='content' value=post.id .form-group)
+        button.btn.btn-success(type='submit') Add comment
+    
     // End Site Content
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
     script.

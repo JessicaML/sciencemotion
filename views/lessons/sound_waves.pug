@@ -3,15 +3,11 @@ html
   title Sound waves
   |   
   head
-    meta(charset='utf-8')
-    |         
-    link(rel='stylesheet', href='styles/screen.css')
-    |                
-    meta(charset='utf-8')
-    |         
     link(href='http://fonts.googleapis.com/css?family=Nova+Round', rel='stylesheet', type='text/css')
-    |         
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js')
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous")
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/sound_waves/screen.css')
+
   |   
   body
     section#top
@@ -54,6 +50,25 @@ html
     section#about
       div
         h1 More info
+        
+    section#comments
+      .card.card-block
+            h5 Comments
+            hr
+            each comment in comments
+              .card.card-block
+                .col-xs-12.col-md-8
+                  p= comment.content
+                  p= comment.id
+                  p= comment.PostId
+
+      .card.card-block
+        h5 Add a comment:
+        form(action="/posts/" + post.id + "/comments", method='POST')
+          input(type='hidden' name='PostId' value="post.id" .form-group)
+          textarea.form-control(rows='5', name='content' value=post.id .form-group)
+          button.btn.btn-success(type='submit') Add comment
+        
     // End Site Content
     script.
       $("#nav-one a")
@@ -70,3 +85,4 @@ html
       $("#beep-one" + $(this).data("beeper"))[0].play();
       });
       $("#beep-one").attr("id", "beep-one0");
+    script(src='/sound_waves/scripts/oakley.js')

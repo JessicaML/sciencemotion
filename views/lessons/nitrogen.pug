@@ -4,35 +4,38 @@ html.no-js
   // <![endif]
   head
     meta(charset='utf-8')
-    title Eye
+    title The nitrogen cycle
     link(href='http://fonts.googleapis.com/css?family=Nova+Round', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='styles/screen.css')
     script(src='scripts/lib/modernizr-2.6.2.min.js')
   body
     //if lt IE 7
     section#top
-      h1 The eye
-      #pupil2
-        img#pupil_label(src='styles/eye/pupil_label.png')
-      #cornea
-        img#cornea_label(src='styles/eye/cornea_label.png')
-      #fovea
-        img#fovea_label(src='styles/eye/fovea_label.png')
-      #cillary_muscle
-        img#cillary_muscle_label(src='styles/eye/cillary_muscle_label.png')
-      #lens
-        img#lens_label(src='styles/eye/lens_label.png')
-      #conjunctiva
-        img#conjunctiva_label(src='styles/eye/conjunctiva_label.png')
+      h1 The Nitrogen cycle
+        div#my-video.video(loop='loop', muted='', width='300', height='150')
+          source(src='nitrogen/nitrogen.mp4', type='video/mp4')
+          source(src='nitrogen/nitrogen.ogv', type='video/ogg')
+          source(src='nitrogen/nitrogen.webm', type='video/webm')
+
+      
     section#info
       div
-        h1 The eye is a sense organ that responds to light
-        h2(style='color:#ff4e40;') Cornea
-        p 	Refracts light - bends it as it enters the eye 
-        h2(style='color:#149dcc;') Iris
-        p  Controls how much light enters the pupil 
-        h2(style='color:#00ffb5;')  Lens
-        p  Focuses light onto the retina 
+        h1 Nitrogen is essential for creating protein
+        h2(style='color:#ff4e40;') Nitrogen is essential for creating protein
+        p Nitrogen is essential for the formation of amino acids in proteins. The nitrogen cycle is a model that explains how nitrogen is recycled.
+ 
+        h2(style='color:#149dcc;') About 78% of the air is nitrogen
+        p  There's lot of nitrogen in air. Because nitrogen is so unreactive, it cannot be used directly by plants to make protein. Only nitrates are useful to plants, so we are dependent on other processes to convert nitrogen to nitrates in the soil.
+ 
+        h2(style='color:#00ffb5;')  Nitrogen-fixing bacteria        
+        p  Nitrogen gas is converted to nitrate compounds by nitrogen-fixing bacteria in soil or root nodules. Lightning also converts nitrogen gas to nitrate compounds. The Haber process converts nitrogen gas into ammonia used in fertilizers. Ammonia is converted to nitrates by nitrifying bacteria in the soil.
+        p  Plants absorb nitrates from the soil and use these to build up proteins. The plant may be eaten by an animal, and its biomass used to produce animal protein.
+        p  Urea and egested material is broken down by decomposers. This results in nitrogen being returned to the soil as ammonia.
+        p  Decomposers also break down the bodies of dead organisms resulting in nitrogen being returned to the soil as ammonia.
+        p  Higher only: In some conditions denitrifying bacteria in the soil break down nitrates and return nitrogen to the air. This is usually in waterlogged soil. Improving drainage reduces this effect, making the soil more fertile.
+
+        
+        
     section#about
       div
         h1 More info

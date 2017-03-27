@@ -12,7 +12,7 @@ body
 	padding:			0;
 	font-family: 		arial;
 	font-size:			62.5%;
-} 
+}
 
 
 article,
@@ -80,7 +80,7 @@ section#top #pupil1 {
 	top:				-15px;
 	left:				-32px;
 	width:				100%;
-	background:			transparent url(eye/pupil.png) no-repeat center center;	
+	background:			transparent url(images/pupil.png) no-repeat center center;
 	height:             100%;
 }
 
@@ -90,7 +90,7 @@ section#top #pupil2 {
 	top:				-15px;
 	left:				-32px;
 	width:				100%;
-	background:			transparent url(eye/pupil.png) no-repeat center center;
+	background:			transparent url(images/pupil.png) no-repeat center center;
 	height:				100%;
 }
 
@@ -99,7 +99,7 @@ section#top #cornea {
 	top:				0;
 	left:				0;
 	width:				100%;
-	background:			transparent url(eye/cornea.png) no-repeat center center;
+	background:			transparent url(images/cornea.png) no-repeat center center;
 	height:				100%;
 }
 
@@ -108,7 +108,7 @@ section#top #fovea {
 	top:				0;
 	left:				0;
 	width:				100%;
-	background:			transparent url(eye/fovea.png) no-repeat center center;
+	background:			transparent url(images/fovea.png) no-repeat center center;
 	height:				100%;
 }
 
@@ -117,7 +117,7 @@ section#top #cillary_muscle {
 	top:				0;
 	left:				0;
 	width:				100%;
-	background:			transparent url(eye/cillary_muscle.png) no-repeat center center;
+	background:			transparent url(images/cillary_muscle.png) no-repeat center center;
 	height:				100%;
 }
 
@@ -126,7 +126,7 @@ section#top #lens {
 	top:				0;
 	left:				0;
 	width:				100%;
-	background:			transparent url(eye/lens.png) no-repeat center center;
+	background:			transparent url(images/lens.png) no-repeat center center;
 	height:				100%;
 }
 
@@ -135,7 +135,7 @@ section#top #conjunctiva {
 	top:				0;
 	left:				0;
 	width:				100%;
-	background:			transparent url(eye/conjunctiva.png) no-repeat center center;
+	background:			transparent url(images/conjunctiva.png) no-repeat center center;
 	height:				100%;
 
 }
@@ -267,11 +267,11 @@ section#info a {
 }
 
 
-section#info a:hover 
+section#info a:hover
 {
-     color:#fff; 
-     text-decoration:none; 
-     cursor:pointer;  
+     color:#fff;
+     text-decoration:none;
+     cursor:pointer;
 }
 
 
@@ -320,10 +320,9 @@ section#about a {
 }
 
 
-section#about a:hover 
+section#about a:hover
 {
-     color:#fff; 
-     text-decoration:none; 
-     cursor:pointer;  
+     color:#fff;
+     text-decoration:none;
+     cursor:pointer;
 }
-

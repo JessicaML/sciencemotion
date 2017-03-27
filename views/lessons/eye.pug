@@ -6,24 +6,27 @@ html.no-js
     meta(charset='utf-8')
     title Eye
     link(href='http://fonts.googleapis.com/css?family=Nova+Round', rel='stylesheet', type='text/css')
-    link(rel='stylesheet', href='styles/screen.css')
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous")
+    //- link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/eye/screen.css')
+
     script(src='scripts/lib/modernizr-2.6.2.min.js')
   body
     //if lt IE 7
     section#top
       h1 The eye
       #pupil2
-        img#pupil_label(src='styles/eye/pupil_label.png')
+        img#pupil_label(src='/eye/images/pupil_label.png')
       #cornea
-        img#cornea_label(src='styles/eye/cornea_label.png')
+        img#cornea_label(src='/eye/images/cornea_label.png')
       #fovea
-        img#fovea_label(src='styles/eye/fovea_label.png')
+        img#fovea_label(src='/eye/images/fovea_label.png')
       #cillary_muscle
-        img#cillary_muscle_label(src='styles/eye/cillary_muscle_label.png')
+        img#cillary_muscle_label(src='/eye/images/cillary_muscle_label.png')
       #lens
-        img#lens_label(src='styles/eye/lens_label.png')
+        img#lens_label(src='/eye/images/lens_label.png')
       #conjunctiva
-        img#conjunctiva_label(src='styles/eye/conjunctiva_label.png')
+        img#conjunctiva_label(src='/eye/images/conjunctiva_label.png')
     section#info
       div
         h1 The eye is a sense organ that responds to light
@@ -40,4 +43,4 @@ html.no-js
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
     script.
       window.jQuery || document.write('<script src="scripts/lib/jquery-1.9.1.min.js"><\\/script>')
-    script(src='scripts/oakley.js')
+    script(src='/eye/scripts/oakley.js')

@@ -58,7 +58,9 @@ router.get('/my-posts', (req, res) => {
   });
 });
 
-
+router.get('/profile', (req, res) => {
+  res.render('profile', { user: req.session.user });
+});
 
 
 //gets new page

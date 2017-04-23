@@ -41,8 +41,9 @@ html
       if user
         a(href="/logout" style="margin-left:5px" class="btn btn-primary float-xs-right") Logout
         a(href="/admin/posts/new" style="margin-left:5px" class="btn btn-info float-xs-right") Create new post
-        a(href="/admin/posts" style="margin-left:5px" class="btn btn-success float-xs-right") Admin panel
-        a(href="/admin/my-posts" style="margin-left:5px" class="btn btn-warning float-xs-right") My posts
+        //- a(href="/admin/posts" style="margin-left:5px" class="btn btn-success float-xs-right") Admin panel
+        a(href="/admin/profile" style="margin-left:5px" class="btn btn-success float-xs-right") My profile
+        //- a(href="/admin/my-posts" style="margin-left:5px" class="btn btn-warning float-xs-right") My posts
         p(class="navbar-brand") Welcome back, #{user.name}!
 
       else

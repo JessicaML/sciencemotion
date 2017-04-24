@@ -32,6 +32,19 @@ app.use(session({
   cookie: { secure: true }
 }));
 
+
+
+function myFunction() {
+    setInterval(function sessionCleanup() {
+    sessionStore.all(function(err, sessions) {
+        for (var i = 0; i < sessions.length; i++) {
+            sessionStore.get(sessions[i], function() {} );
+        }
+    });
+}, 3000);
+}
+
+
 app.use(bodyParser.urlencoded({ extended: false}));
 
 

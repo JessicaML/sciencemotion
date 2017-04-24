@@ -27,9 +27,9 @@ app.use(logger('dev'));
 app.use(session({
   name: 'session-cookie',
   secret: 'our secret key',
-  resave: true,
+  resave: false,
   saveUninitialized: true,
-  maxAge: 5*60*1000
+  cookie: { secure: true }
 }));
 
 app.use(bodyParser.urlencoded({ extended: false}));

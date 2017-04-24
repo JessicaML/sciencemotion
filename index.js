@@ -28,8 +28,10 @@ app.use(session({
   name: 'session-cookie',
   secret: 'our secret key',
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  maxAge: 5*60*1000
 }));
+
 app.use(bodyParser.urlencoded({ extended: false}));
 
 

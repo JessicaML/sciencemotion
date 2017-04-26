@@ -4,12 +4,16 @@ const express = require('express'),
       pug = require('pug'),
       logger = require('morgan'),
       cookieSession = require('cookie-session'),
+      session = require('express-session'),
+      MongoStore = require('express-session-mongo'),
       displayRoutes = require('express-routemap'),
       pg = require('pg').native;
 
 var db = require('./models');
 
 var app = express();
+
+app.use(session({ store: new MongoStore() }));
 
 
 const adminRouter = require('./routes/admin'),
@@ -35,8 +39,14 @@ app.use(logger('dev'));
 app.use(cookieSession({
   name: 'session',
   keys: ['our secret key'],
+  resave: true,
+  saveUninitialized: true,
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
-}))
+}));
+
+// db.sessions.ensureIndex( { "lastAccess": 1 }, { expireAfterSeconds: 3600 } )
+
+
 
 // function myFunction() {
 //     setInterval(function sessionCleanup() {

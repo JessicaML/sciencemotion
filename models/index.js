@@ -21,13 +21,25 @@ var pg = require('pg');
 //     });
 // });
 
-if (process.env.NODE_ENV === 'production') {
-  var sequelize = new Sequelize(process.env.DATABASE_URL);
-} else if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+if (process.env.DATABASE_URL) {
+  // the application is executed on Heroku ... use the postgres database
+  var sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect:  'postgres',
+    protocol: 'postgres',
+    logging:  true //false
+  });
 } else {
-  var sequelize = new Sequelize(config.database, config.username, config.password, config);
+  // the application is executed on the local machine
+  var sequelize = new Sequelize("postgres:///blog-app");
 }
+
+// if (process.env.NODE_ENV === 'production') {
+//   var sequelize = new Sequelize(process.env.DATABASE_URL);
+// } else if (config.use_env_variable) {
+//   var sequelize = new Sequelize(process.env[config.use_env_variable]);
+// } else {
+//   var sequelize = new Sequelize(config.database, config.username, config.password, config);
+// }
 
 fs
   .readdirSync(__dirname)

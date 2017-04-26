@@ -11,6 +11,7 @@
     "bcryptjs": "^2.4.0",
     "body-parser": "^1.16.0",
     "bower": "^1.8.0",
+    "cookie-session": "^2.0.0-beta.1",
     "express": "4.15.2",
     "express-routemap": "^1.0.2",
     "express-session": "^1.14.2",

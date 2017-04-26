@@ -4,6 +4,7 @@ const express = require('express'),
       pug = require('pug'),
       logger = require('morgan'),
       session = require('express-session'),
+      cookieSession = require('cookie-session'),
       displayRoutes = require('express-routemap'),
       pg = require('pg').native;
 
@@ -24,15 +25,20 @@ app.use(express.static('public'));
 
 app.use(logger('dev'));
 
-app.use(session({
-  name: 'session-cookie',
-  secret: 'our secret key',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}));
+// app.use(session({
+//   name: 'session-cookie',
+//   secret: 'our secret key',
+//   resave: false,
+//   saveUninitialized: true,
+//   cookie: { secure: true }
+// }));
 
 
+app.use(cookieSession({
+  name: 'session',
+  keys: ['our secret key'],
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}))
 
 function myFunction() {
     setInterval(function sessionCleanup() {

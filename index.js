@@ -3,7 +3,6 @@ const express = require('express'),
       methodOverride = require('method-override'),
       pug = require('pug'),
       logger = require('morgan'),
-      session = require('express-session'),
       cookieSession = require('cookie-session'),
       displayRoutes = require('express-routemap'),
       pg = require('pg').native;
@@ -22,7 +21,6 @@ app.set('view engine', 'pug');
 
 app.use(express.static('public'));
 
-
 app.use(logger('dev'));
 
 // app.use(session({
@@ -40,15 +38,15 @@ app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }))
 
-function myFunction() {
-    setInterval(function sessionCleanup() {
-    sessionStore.all(function(err, sessions) {
-        for (var i = 0; i < sessions.length; i++) {
-            sessionStore.get(sessions[i], function() {} );
-        }
-    });
-}, 3000);
-}
+// function myFunction() {
+//     setInterval(function sessionCleanup() {
+//     sessionStore.all(function(err, sessions) {
+//         for (var i = 0; i < sessions.length; i++) {
+//             sessionStore.get(sessions[i], function() {} );
+//         }
+//     });
+// }, 3000);
+// }
 
 
 app.use(bodyParser.urlencoded({ extended: false}));

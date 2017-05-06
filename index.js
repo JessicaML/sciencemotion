@@ -13,7 +13,7 @@ var db = require('./models');
 
 var app = express();
 
-app.use(session({ store: new MongoStore() }));
+// app.use(session({  }));
 
 
 const adminRouter = require('./routes/admin'),
@@ -27,22 +27,17 @@ app.use(express.static('public'));
 
 app.use(logger('dev'));
 
-// app.use(session({
-//   name: 'session-cookie',
-//   secret: 'our secret key',
-//   resave: false,
-//   saveUninitialized: true,
-//   cookie: { secure: true }
-// }));
-
-
-app.use(cookieSession({
-  name: 'session',
-  keys: ['our secret key'],
+app.use(session({
+  name: 'session-cookie',
+  secret: 'our secret key',
   resave: true,
   saveUninitialized: true,
-  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  cookie: { secure: true },
+  store: new MongoStore()
 }));
+
+
+
 
 // db.sessions.ensureIndex( { "lastAccess": 1 }, { expireAfterSeconds: 3600 } )
 
